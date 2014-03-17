@@ -1,0 +1,63 @@
+package orcamentoPessoal.client.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Id;
+
+import javax.persistence.Entity;
+
+
+@Entity // 
+public class Pessoa implements Serializable{
+    @Id
+    Long id;     //generated Id by appengine
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+	public String getUsuario() {
+		return Usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		Usuario = usuario;
+	}
+
+	public String getRG() {
+		return RG;
+	}
+
+	public void setRG(String rG) {
+		RG = rG;
+	}
+
+	public String getEmail() {
+		return Email;
+	}
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+	private String Nome;
+	private String Usuario;
+	private String RG;
+	private String Email;
+	
+	public Pessoa()
+    {
+    	
+    }
+}
