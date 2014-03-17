@@ -32,10 +32,13 @@ import com.smartgwt.client.docs.Date;
 public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
+
 	public void persistentPessoa(String name, String email, String register, String user)
 	{
+	
 		ObjectifyService.register(Pessoa.class);   //Registers new entity within the service
 		Objectify obj = ObjectifyService.begin();  // open transaction
+		
 		Pessoa pessoa = new Pessoa();
 		pessoa.setNome(name);
 		pessoa.setEmail(email);
@@ -47,6 +50,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	
 	public void persistentProduto(String CodProd, String DescProd, String PrecoProd, String LocalProd)
 	{
+	
 		ObjectifyService.register(Produto.class);
 		Objectify objprod = ObjectifyService.begin();
 		Produto produto = new Produto();
@@ -60,6 +64,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	
 	public ArrayList<Produto> searchProduto()
 	{
+	
 		ObjectifyService.register(Produto.class);   // ||
 		Objectify objcprod = ObjectifyService.begin(); // ||
 		
@@ -76,6 +81,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	
 	public ArrayList<Pessoa> searchPessoa()
 	{
+	
 		ObjectifyService.register(Pessoa.class);
 		Objectify objc = ObjectifyService.begin();
 		
@@ -92,6 +98,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 
 	public void persistentItem(Long pessoa, Long produto, String qtde, String total, String descricaoProd)
 	{
+	
 		ObjectifyService.register(Item.class);
 		Objectify obj = ObjectifyService.begin();
 		Item item = new Item();
@@ -107,6 +114,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	
 	public void deletePessoa(Pessoa person)
 	{
+	
 		ObjectifyService.register(Pessoa.class);   // ||
 		Objectify obj = ObjectifyService.begin();   // ||
 		obj.delete(person);								//Delete object passed by parameter
